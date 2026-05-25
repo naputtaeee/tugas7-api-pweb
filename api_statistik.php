@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Headers: Content-Type, Authorization"); // Ditambah Authorization di sini
 
-// Koneksi ke database kamu
+// Koneksi ke database 
 $conn = new mysqli("localhost", "root", "", "db_penjualan_toko");
 
 // --- PASANG GEMBOK DI SINI ---

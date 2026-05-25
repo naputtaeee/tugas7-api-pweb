@@ -14,7 +14,6 @@ if ($conn->connect_error) {
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-// Pak Pizaini minta endpoint login ini tipenya POST
 if ($method === 'POST') {
     
     // 2. Ambil data username & password yang dikirim dari Postman
@@ -35,7 +34,6 @@ if ($method === 'POST') {
         $user = $result->fetch_assoc();
         
         // 4. GENERATE TOKEN (Sesuai request bapak: berupa token, random text atau lainnya)
-        // Kita pakai fungsi acak bawaan PHP bernama bin2hex(random_bytes) agar kodenya unik banget
         $token = bin2hex(random_bytes(16)); 
         $id_user = $user['id_user'];
 
@@ -47,7 +45,7 @@ if ($method === 'POST') {
         echo json_encode([
             "status" => true,
             "message" => "Login Berhasil!",
-            "token" => $token // Token acak ini yang bakal jadi kunci sakti kamu nanti
+            "token" => $token // Token acak yang bakal jadi kunci sakti
         ]);
 
     } else {
